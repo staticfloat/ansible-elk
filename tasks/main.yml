@@ -7,14 +7,6 @@
   with_items: elk_common_packages
   sudo: yes
 
-- name: Monit conf file
-  copy:
-    src=monitrc
-    dest=/etc/monit/monitrc
-    owner=root group=root mode=600
-  sudo: yes
-  notify: Restart monit
-
 - name: Install Java
   include: java.yml
 
@@ -26,12 +18,6 @@
 
 - name: Install Elasticsearch
   include: elasticsearch.yml
-
-- name: Install Logstash
-  include: logstash.yml
-
-- name: Install Nginx
-  include: nginx.yml
 
 - name: Install Kibana
   include: kibana.yml

@@ -4,8 +4,6 @@ elk_common_packages:
     - python-apt
     - python-pycurl
     - python-pip
-    - supervisor
-    - monit
     - git-core
     - jq
 elk_java:
