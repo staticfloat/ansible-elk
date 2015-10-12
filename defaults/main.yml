@@ -9,6 +9,13 @@ elk_java:
 
 elk_user: "{% if ansible_os_family == 'RedHat' %}nginx{% elif ansible_os_family == 'Debian' %}www-data{% endif %}"
 
+elk_logstash:
+  version: 1.5
+  pid_file: /var/run/logstash.pid
+  configs:
+    - { src: logstash-simple.conf.j2, dest: simple.conf }
+  patterns: []
+
 elk_elasticsearch:
   version: 1.7
   pid_file: /var/run/elasticsearch.pid

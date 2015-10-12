@@ -19,5 +19,8 @@
 - name: Install Elasticsearch
   include: elasticsearch.yml
 
+- name: Install Logstash
+  include: logstash.yml
+
 - name: Install Kibana
   include: kibana.yml

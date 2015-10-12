@@ -10,7 +10,6 @@
   apt: pkg=elasticsearch update_cache=yes state=latest
   sudo: yes
   when: ansible_os_family == 'Debian'
-  notify: Restart elasticsearch
 
 - name: Curator PIP package
   pip: name=elasticsearch-curator state=latest
@@ -22,4 +21,3 @@
     dest=/etc/elasticsearch/elasticsearch.yml
     owner=root group=root mode=644
   sudo: yes
-  notify: Restart elasticsearch
